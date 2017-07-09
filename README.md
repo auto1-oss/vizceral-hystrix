@@ -93,7 +93,12 @@ java -jar vizceral-hystrix-1.0.0.jar eu-west-1.json eu-west-2.json
 If you prefer running in docker, simply replace the config.json and run
 ```
 docker build -t vichyz . &&  docker run --name vichyz -p "8080:8080" -p "8081:8081" vichyz
-``` 
+```
+
+Turbine host and port configuration can be provided as env variables (if configuration file contains placeholders)
+```
+docker run -p 8080:8080 -p 8081:8081 -e TURBINE_HOST=172.17.0.1 -e TURBINE_PORT=8000
+```
 
 Then open localhost:8080.
 
